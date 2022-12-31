@@ -69,7 +69,7 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
  ---------------------------------------------------------------------------------------------------------------------------------
 
-### trade_net:
+### trade_net
 
 #### ----- codes
 
