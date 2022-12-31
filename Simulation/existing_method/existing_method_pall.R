@@ -1,7 +1,7 @@
 #--------------------------------------------------
 #----------------- Simulation Study
 #--------------------- exsiting menthods including: LASSO SCAD MCP
-#--------------------- written in R 3.6.1, last edited in Aug 27, 2022
+#--------------------- written in R 3.6.1
 #--------------------------------------------------
 
 library(snow)  # for parallelization 
