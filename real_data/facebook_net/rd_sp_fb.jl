@@ -3,7 +3,7 @@
 #--- in Social Networks with Degree Heterogeneity
 #--------------------------------------------------
 #--------- Real data analysis (Facebook friendship network)
-#--------- BSM-net.sp: written in Julia 1.3.1, last edited in July 12, 2021
+#--------- BSM-net.sp: written in Julia 1.3.1
 #--------------------------------------------------
 
 #--------------------------------------------------
