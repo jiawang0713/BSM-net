@@ -3,7 +3,7 @@
 #--- in Social Networks with Degree Heterogeneity
 #--------------------------------------------------
 #--------- Simulation Study
-#--------- BSM-net.sp: written in Julia 1.3.1, last edited in Aug 27, 2022
+#--------- BSM-net.sp: written in Julia 1.3.1
 #--------------------------------------------------
 
 iter = ARGS[1]; # get the number of replication
