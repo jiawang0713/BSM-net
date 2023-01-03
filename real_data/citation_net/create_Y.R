@@ -4,14 +4,13 @@
 #--------------------------------------------------
 #--------- Real data analysis (Facebook friendship network)
 #----------   Construct the adjacency matrix Y based on citation data set https://www.aminer.cn/citation
-#---------    last edited in July 22, 2021
 #--------------------------------------------------
 
 #--------------------------------------------------
 #--------- Step 1: convert raw text data 'acm.txt' into 'citation_full.RData' (file contained in the folder)
 #--------------------------------------------------
 
-con = file("~/Documents/Research/BVS_NET/citation_network_v9/acm.txt", "r") # 'acm.txt' could be downloaded from https://www.aminer.cn/citation Citation-network V1
+con = file("~/citation_network_V9/acm.txt", "r") # 'acm.txt' could be downloaded from https://www.aminer.cn/citation ACM-Citation-network V9
 num=2385022 
 title<-rep("", num)
 author<-rep("", num)
@@ -50,7 +49,7 @@ while (count<(num+1)) {
   } 
 }
 close(con)
-save(title, author, year, publication, citation, index, abstract,file = "~/Documents/Research/BVS_NET/citation_network_v9/citation_full.RData")
+save(title, author, year, publication, citation, index, abstract,file = "~/citation_network_v9/citation_full.RData")
 
 #--------------------------------------------------
 #--------- Step 2: Get node degree for each paper and save it in a vector named 'count' (file contained in the folder)
@@ -72,13 +71,13 @@ for (j in 1:current_n){
   ind = ind[!is.na(ind)]
   if (length(ind)>0){count[ind] = count[ind] +1 }
 }
-write.csv(count,file = '~/Documents/Research/BVS_NET/citation_network_V9/count.csv')
+write.csv(count,file = '~/citation_network_V9/count.csv')
 
 #--------------------------------------------------
 #--------- Step 3: Get a dense sub-network with samller size 
 #--------------------------------------------------
 
-count = read.csv("~/Documents/Research/BVS_NET/citation_network_V9/count.csv")
+count = read.csv("~/citation_network_V9/count.csv")
 count = count$x
 ind = which(count >200)
 selected_indx = current_indx[ind]
@@ -94,5 +93,5 @@ for (i in 1:length(selected_edge_list)){
   }
 }
 n = length(selected_indx)
-write.csv(Y,file = '~/Documents/Research/BVS_NET/citation_network_V9/citation_Y_1207_n=476.csv')
-write.csv(selected_indx,file = '~/Documents/Research/BVS_NET/citation_network_v9/selected_indx_1207_n=476.csv')
+write.csv(Y,file = '~/citation_Y_1207_n=476.csv')
+write.csv(selected_indx,file = '~/selected_indx_1207_n=476.csv')
