@@ -9,8 +9,8 @@
 #--------------------------------------------------
 #--------- Step 1: convert raw text data 'acm.txt' into 'citation_full.RData' (file contained in the folder)
 #--------------------------------------------------
-
-con = file("~/citation_network_V9/acm.txt", "r") # 'acm.txt' could be downloaded from https://www.aminer.cn/citation ACM-Citation-network V9
+setwd("~/citation_network_V9/")
+con = file("~/acm.txt", "r") # 'acm.txt' could be downloaded from https://www.aminer.cn/citation ACM-Citation-network V9
 num=2385022 
 title<-rep("", num)
 author<-rep("", num)
@@ -49,7 +49,7 @@ while (count<(num+1)) {
   } 
 }
 close(con)
-save(title, author, year, publication, citation, index, abstract,file = "~/citation_network_V9/citation_full.RData")
+save(title, author, year, publication, citation, index, abstract,file = "~/citation_full.RData")
 
 #--------------------------------------------------
 #--------- Step 2: Get node degree for each paper and save it in a vector named 'count' (file contained in the folder)
@@ -71,13 +71,13 @@ for (j in 1:current_n){
   ind = ind[!is.na(ind)]
   if (length(ind)>0){count[ind] = count[ind] +1 }
 }
-write.csv(count,file = '~/citation_network_V9/count.csv')
+write.csv(count,file = '~/count.csv')
 
 #--------------------------------------------------
 #--------- Step 3: Get a dense sub-network with samller size 
 #--------------------------------------------------
 
-count = read.csv("~/citation_network_V9/count.csv")
+count = read.csv("~/count.csv")
 count = count$x
 ind = which(count >200)
 selected_indx = current_indx[ind]
