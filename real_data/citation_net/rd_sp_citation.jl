@@ -248,7 +248,7 @@ end
 #----------------- write results
 #--------------------------------------------------
 gamma = psi_path[3];
-file_name = join(["/gamma_sp_product_standized_$code","_n=$n","_M=$M.csv"]);
+file_name = join(["/gamma_sp_product_standardized_$code","_n=$n","_M=$M.csv"]);
 open(file_name,"w") do f
     for i in 1:size(gamma)[1]
         for j in 1:size(gamma)[2]
@@ -260,7 +260,7 @@ open(file_name,"w") do f
 end
 
 beta_delta = psi_path[1];
-file_name = join(["/beta_delta_sp_product_standized_$code","_n=$n","_M=$M.csv"]);
+file_name = join(["/beta_delta_sp_product_standardized_$code","_n=$n","_M=$M.csv"]);
 open(file_name,"w") do f
     for i in 1:size(beta_delta)[1]
         for j in 1:size(beta_delta)[2]
