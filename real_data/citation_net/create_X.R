@@ -9,7 +9,7 @@
 library(GGally)
 library(network)
 library(sna)
-setwd("~/citation_network/")
+setwd("~/citation_network_V9/")
 load("citation_full.RData") # created in 'create_Y.R'
 set.seed(2020)
 
