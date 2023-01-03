@@ -3,7 +3,7 @@
 #--- in Social Networks with Degree Heterogeneity
 #--------------------------------------------------
 #--------- Real data analysis (paper citation network)
-#--------- BSM-net.sp: written in Julia 1.3.1, last edited in July 12, 2021
+#--------- BSM-net.sp: written in Julia 1.3.1
 #--------------------------------------------------
 
 #--------------------------------------------------
@@ -56,10 +56,10 @@ end
 #----------------- read X and Y
 #--------------------------------------------------
 code = 1207;
-file_name = join(["/storage/home/j/jzw88/work/Research_NET/citation_net/citation_X_$code","_n=476.csv"]);
+file_name = join(["/citation_X_$code","_n=476.csv"]);
 X = readdlm(file_name, ',');
 X = X[2:size(X)[1], 2:size(X)[2]];
-file_name = join(["/storage/home/j/jzw88/work/Research_NET/citation_net/citation_Y_$code","_n=476.csv"]);
+file_name = join(["/citation_Y_$code","_n=476.csv"]);
 Y = readdlm(file_name, ',');
 Y = Y[2:size(Y)[1], 2:size(Y)[1]];
 n,d = size(X);
@@ -248,7 +248,7 @@ end
 #----------------- write results
 #--------------------------------------------------
 gamma = psi_path[3];
-file_name = join(["/storage/home/j/jzw88/work/Research_NET/citation_net/gamma_sp_product_standized_$code","_n=$n","_M=$M.csv"]);
+file_name = join(["/gamma_sp_product_standized_$code","_n=$n","_M=$M.csv"]);
 open(file_name,"w") do f
     for i in 1:size(gamma)[1]
         for j in 1:size(gamma)[2]
@@ -260,7 +260,7 @@ open(file_name,"w") do f
 end
 
 beta_delta = psi_path[1];
-file_name = join(["/storage/home/j/jzw88/work/Research_NET/citation_net/beta_delta_sp_product_standized_$code","_n=$n","_M=$M.csv"]);
+file_name = join(["/beta_delta_sp_product_standized_$code","_n=$n","_M=$M.csv"]);
 open(file_name,"w") do f
     for i in 1:size(beta_delta)[1]
         for j in 1:size(beta_delta)[2]
