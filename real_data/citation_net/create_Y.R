@@ -49,7 +49,7 @@ while (count<(num+1)) {
   } 
 }
 close(con)
-save(title, author, year, publication, citation, index, abstract,file = "~/citation_network_v9/citation_full.RData")
+save(title, author, year, publication, citation, index, abstract,file = "~/citation_network_V9/citation_full.RData")
 
 #--------------------------------------------------
 #--------- Step 2: Get node degree for each paper and save it in a vector named 'count' (file contained in the folder)
