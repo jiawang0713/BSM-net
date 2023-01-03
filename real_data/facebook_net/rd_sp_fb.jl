@@ -59,9 +59,9 @@ end
 #--------------------------------------------------
 #----------------- read data 
 #--------------------------------------------------
-X = readdlm("/storage/home/j/jzw88/X.csv", ',');
+X = readdlm("/X.csv", ',');
 X = X[2:size(X)[1], 3:226];
-Y = readdlm("/storage/home/j/jzw88/Y.csv", ',');
+Y = readdlm("/Y.csv", ',');
 Y = Y[2:size(Y)[1], 2:size(Y)[1]];
 n,d = size(X);
 section=[8-0, 13-8,19-13+1, 23-20+1,52-24+1, 55-53+1, 1, 72-57+1, 76-73+1, 78-77+1,
@@ -133,7 +133,7 @@ psi_path[3][1,(d+1):(d+n)] = ones(Float64, n);
 
 #--------------------------------------------------
 #------------------ start the iteration to update :  
-#------------------      beta, delta, z (g in the paper), psi, gamma, eta
+#------------------      beta, delta, z (g in the manuscript), psi, gamma, eta
 #--------------------------------------------------
 
 @CPUtime for t in 1:M # record the CPU time
@@ -260,7 +260,7 @@ end
 #----------------- write results
 #--------------------------------------------------
 gamma = psi_path[3][Int(0.6*M):M,:];
-file_name = join(["/storage/home/j/jzw88/work/Research_NET/facebook_net/gamma_sp_abs_d=$d","_n=$n","_M=$M.csv"]);
+file_name = join(["/gamma_sp_abs_d=$d","_n=$n","_M=$M.csv"]);
 open(file_name,"w") do f
     for i in 1:size(gamma)[1]
         for j in 1:size(gamma)[2]
@@ -272,7 +272,7 @@ open(file_name,"w") do f
 end
 
 beta_delta = psi_path[1][Int(0.6*M):M,:];
-file_name = join(["/storage/home/j/jzw88/work/Research_NET/facebook_net/beta_delta_sp_abs_d=$d","_n=$n","_M=$M.csv"]);
+file_name = join(["/beta_delta_sp_abs_d=$d","_n=$n","_M=$M.csv"]);
 open(file_name,"w") do f
     for i in 1:size(beta_delta)[1]
         for j in 1:size(beta_delta)[2]
