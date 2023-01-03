@@ -64,7 +64,7 @@ Y = readdlm(file_name, ',');
 Y = Y[2:size(Y)[1], 2:size(Y)[1]];
 n,d = size(X);
 
-# standardize X
+# standardized X
 for i in 1:size(X)[2]
     m = mean(X[:,i]);
     sd = sqrt(sum((X[:,i] .- m) .^2) / (length(X[:,i]) - 1));
