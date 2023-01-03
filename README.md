@@ -2,6 +2,7 @@
 Code for the project: *Variable Selection for High-dimensional Nodal Attributes in Social Networks with Degree Heterogeneity*. Please see the folder structure below. 
 
 ---------------------------------------------------------------------------------------
+
 ## simulation
 
 ### proposed_method
@@ -45,7 +46,7 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 * `21featnames`: anonymous feature names for those 21 survey questions about users profiles (downloaded from https://snap.stanford.edu/data/ego-Facebook.html).
 
- ---------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
  
 ### citation_net
 
@@ -67,7 +68,7 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 * `selected_indx_1207_n=476.csv`: indices of selected papers. (created in `create_Y.R`)
 
- ---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 
 ### trade_net
 
@@ -75,7 +76,7 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 * `preprocessing.R`: R codes to construct the node-level features X based on WDIs and the adjacency matrix Y based on trade values.
 
-**NOTE**: .jl file is skipped here as it is almost the same as `rd_sp_citation.jl`
+**NOTE**: `.jl` file is skipped here as it is almost the same as `rd_sp_citation.jl`
 
 #### ----- data and results
 
