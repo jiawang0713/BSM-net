@@ -47,7 +47,7 @@ function reshape_T_vec(T, Model)
     return temp
 end
     
-# a function to standardize matrix by column
+# a function to standardized matrix by column
 function colsd(x)
     y = ones(size(x)[2]);
     for i in 1: size(x)[2]
