@@ -4,17 +4,16 @@
 #--------------------------------------------------
 #--------- Real data analysis (International trade network)
 #--------- data pre-processing: create X and Y
-#--------- last edited in July 12, 2021
 #--------------------------------------------------
 
 #--------------------------------------------------
 #--------- Construct node-level features X based on WDIs
 #--------------------------------------------------
 
-country_codes <- read.csv("~/Documents/Research/BVS_NET/trade_data/country_codes_V202001.csv")
+country_codes <- read.csv("~/trade_data/country_codes_V202001.csv")
 # remove countries without WDI
 library(readxl)
-WDI <- read_excel("~/Documents/Research/BVS_NET/trade_data/WDI.xlsx", sheet = "Data")
+WDI <- read_excel("~/trade_data/WDI.xlsx", sheet = "Data")
 WDI_variable_name= unique(WDI$`Series Code` )
 WDI$`Country Code`=as.factor(WDI$`Country Code`)
 WDI_country_code = as.character(unique(WDI$`Country Code`))
@@ -55,16 +54,16 @@ while (sum(apply(WDI_df, 1, function (x) sum(is.na(x))))>0){
 # save the final list of countries and X
 ind  = match(WDI_df$country_code, country_codes$iso_3digit_alpha)
 country_codes = country_codes[ind,]
-write.csv(country_codes, file = '~/Documents/Research/BVS_NET/trade_data/final_country_codes_n=142.csv')
-write.csv(WDI_df[,-1], file = '~/Documents/Research/BVS_NET/trade_data/trade_X_n=142.csv')
+write.csv(country_codes, file = '~/trade_data/final_country_codes_n=142.csv')
+write.csv(WDI_df[,-1], file = '~/trade_data/trade_X_n=142.csv')
 
 #--------------------------------------------------
 #--------- Construct the adjacency matrix Y based on trade values
 #--------------------------------------------------
 
-BACI_Y2017 <- read.csv("~/Documents/Research/BVS_NET/trade_data/BACI_HS12_V202001/BACI_HS12_Y2017_V202001.csv") 
+BACI_Y2017 <- read.csv("~/trade_data/BACI_HS12_V202001/BACI_HS12_Y2017_V202001.csv") 
 # downloaded from http://www.cepii.fr/CEPII/en/bdd_modele/download.asp?id=37 -> Trade flows data -> HS12 (2012-2019, 799 Mo)
-country_codes_IE <- read.csv("~/Documents/Research/BVS_NET/trade_data/country_codes_V202001.csv")
+country_codes_IE <- read.csv("~/trade_data/country_codes_V202001.csv")
 code_IE=country_codes_IE$country_code[match(country_codes$iso_3digit_alpha,country_codes_IE$iso_3digit_alpha)]
 n=142
 # aggregate the total value of cash for edge i->j in Year 2017
@@ -89,7 +88,7 @@ for (ind in 1:end_loop){
     }
   }
 }
-write.csv(Y_2017 ,file = '~/Documents/Research/BVS_NET/trade_data/Y_2017.csv')
+write.csv(Y_2017 ,file = '~/trade_data/Y_2017.csv')
 # constrct the adjacency matrix Y based on trade value Y_2017
 Y = matrix(0, ncol = n, nrow = n)
 for (i in 2:n){
@@ -101,4 +100,4 @@ for (i in 2:n){
   }
 }
 sum(Y)
-write.csv(Y,file = '~/Documents/Research/BVS_NET/trade_data/trade_X_n=142.csv')
+write.csv(Y,file = '~/trade_data/trade_X_n=142.csv')
