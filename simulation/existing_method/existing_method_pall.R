@@ -65,7 +65,7 @@ everyloop<- function(iter){
       tmp = tmp + 1
     }
   }
-  # standize X
+  # standardize X
   X_std  =  apply(X, MARGIN=2, FUN= function(x) { (x - mean(x))/sd(x) })
   #--------------------------------------------------
   #------------------ get values for criteria:
@@ -76,7 +76,7 @@ everyloop<- function(iter){
   #------------------   4: true positive rate (TPR) given model size <=4
   #------------------   5: false discovery rate (FDR)
   #------------------   6: model error
-  #------------------   7: select model size (LASSO only)
+  #------------------   7: selected model size (LASSO only)
   #--------------------------------------------------
   
   #--------------------------------------------------
