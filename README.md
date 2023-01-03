@@ -32,6 +32,8 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 ### facebook_net
 
+**Data source**: The dataset is publicly accessible downloaded from <https://snap.stanford.edu/data/ego-Facebook.html> network 0.
+
 #### ----- codes
 
 * `rd_sp_fb.jl`: the proposed method (BSM-net.sp) on Facebook friendship data set written in Julia 1.3.1.
@@ -40,23 +42,25 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 #### ----- data and results
 
-* `Y.csv`: the adjacency matrix Y (constructed based on <https://snap.stanford.edu/data/ego-Facebook.html>.
+* `Y.csv`: the adjacency matrix Y.
 
-* `X.csv`: the node-level features X (constructed based on <https://snap.stanford.edu/data/ego-Facebook.html>).
+* `X.csv`: the node-level features X.
 
-* `21featnames`: anonymous feature names for those 21 survey questions about users profiles (downloaded from <https://snap.stanford.edu/data/ego-Facebook.html>).
+* `21featnames`: anonymous feature names for those 21 survey questions about users profiles.
 
 -------------------------------------------------------------------------------------------
  
 ### citation_net
 
+**Data source**: The dataset is publicly accessible downloaded from <https://www.aminer.cn/citation> ACM-Citation-network V9.
+
 #### ----- codes
 
 * `rd_sp_citation.jl`: the proposed method (BSM-net.sp) on paper citation data set written in Julia 1.3.1.
 
-* `create_X.R`: R codes for LDA on paper abstract (downloaded from <https://www.aminer.cn/citation> ACM-Citation-network V9) to construct node-features X.
+* `create_X.R`: R codes for LDA on paper abstract to construct node-features X.
 
-* `create_Y.R`: R codes to construct the adjacency matrix Y based on citation data set <https://www.aminer.cn/citation> ACM-Citation-network V9.
+* `create_Y.R`: R codes to construct the adjacency matrix Y based on the citation data set.
 
 #### ----- data and results
 
@@ -72,6 +76,8 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 ### trade_net
 
+**Data source**: The datasets are publicly accessible downloaded from <http://www.cepii.fr/CEPII/en/bdd_modele/presentation.asp?id=37> for the trade data set, and <https://datacatalog.worldbank.org/dataset/world-development-indicators> for the WDI data set.
+
 #### ----- codes
 
 * `preprocessing.R`: R codes to construct the node-level features X based on WDIs and the adjacency matrix Y based on trade values.
@@ -80,9 +86,9 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 #### ----- data and results
 
-* `trade_Y_n=142.csv`: the adjacency matrix Y (constructed based on trade data set <http://www.cepii.fr/CEPII/en/bdd_modele/presentation.asp?id=37>).
+* `trade_Y_n=142.csv`: the adjacency matrix Y (constructed based on the trade data set).
 
-* `trade_X_n=142.csv`: the node-level features X (constructed based on WDI data set <https://datacatalog.worldbank.org/dataset/world-development-indicators>).
+* `trade_X_n=142.csv`: the node-level features X (constructed based on the WDI data set).
 
 * `final_country_codes_n=142.csv`: the collection of n = 142 selected countries. (created in `preprocessing.R`)
 
