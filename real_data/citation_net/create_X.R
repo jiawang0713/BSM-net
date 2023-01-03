@@ -4,13 +4,12 @@
 #--------------------------------------------------
 #--------- Real data analysis (Facebook friendship network)
 #----------   LDA on paper abstract to construct X
-#---------    last edited in July 12, 2021
 #--------------------------------------------------
 
 library(GGally)
 library(network)
 library(sna)
-setwd("~/Documents/Research/BVS_NET/citation_network/")
+setwd("~/citation_network/")
 load("citation_full.RData") # created in 'create_Y.R'
 set.seed(2020)
 
@@ -45,5 +44,5 @@ LDA.Gibbs.fit =  LDA(docs, k = k, method = "Gibbs", control = list(seed = SEED, 
 
 Terms <- terms(LDA.Gibbs.fit , 5) # The 5 most frequent terms for each topics for interpretation. 
 
-write.csv(Terms,file = '~/Documents/Research/BVS_NET/citation_network_V9/Terms_1207_n=476.csv')
-write.csv(posterior(LDA.Gibbs.fit)$topic[1:n,],file = '~/Documents/Research/BVS_NET/citation_network_V9/citation_X_1207_n=476.csv')
+write.csv(Terms,file = '~/Terms_1207_n=476.csv')
+write.csv(posterior(LDA.Gibbs.fit)$topic[1:n,],file = '~/citation_X_1207_n=476.csv')
