@@ -3,7 +3,7 @@
 #--- in Social Networks with Degree Heterogeneity
 #--------------------------------------------------
 #--------- Simulation Study
-#--------- BSM-net.sp: written in Julia 1.3.1, last edited in Aug 27, 2022
+#--------- BSM-net.sp: written in Julia 1.3.1
 #--------------------------------------------------
 
 iter = ARGS[1]; # get the number of replication
@@ -84,7 +84,7 @@ function g(x,y)
     return x.*y
 end
 #--------------------------------------------------
-#----------------- simulate X and Y
+#----------------- simulate X, Y, delta
 #--------------------------------------------------
 X = rand(MultivariateNormal(zeros(d), sigma), n)';
 influence = sortperm(X[:,1]+ rand(Normal(0,4),n), rev = true)[1:n_a];
@@ -184,7 +184,7 @@ psi_path[3][1,(d+1):(d+n)] = ones(Float64, n);
 
 #--------------------------------------------------
 #------------------ start the iteration to update :  
-#------------------      beta, delta, z (g in the paper), psi, gamma, eta
+#------------------      beta, delta, z (g in the manuscript), psi, gamma, eta
 #--------------------------------------------------
 
 @CPUtime for t in 1:M # record the CPU time
@@ -311,6 +311,7 @@ end
 #------------------ get values for criteria:
 #------------------   1: the minimal of marginal posterior probabilities on the true active covariates
 #------------------   2: the maximal of marginal posterior probabilities on the true inactive covariates
+#--------------------------------------------------                                                                                                        
 #------------------ model selected by MPM: 
 #------------------   3: whether the true models is selected
 #------------------   4: whether the true models is contained in the selected set
@@ -319,7 +320,8 @@ end
 #------------------   7: false discovery rate (FDR)
 #------------------   8: model error (beta)
 #------------------   9: true positive rate (TPR) for identifying active nodes
-#------------------   10: alse discovery rate (FDR) for identifying active nodes
+#------------------   10: false discovery rate (FDR) for identifying active nodes
+#--------------------------------------------------                                                                                                       
 #------------------ model selected by MAP:
 #------------------   11: whether the true models is selected
 #------------------   12: whether the true models is contained in the selected set
@@ -328,7 +330,7 @@ end
 #------------------   15: false discovery rate (FDR)
 #------------------   16: model error (beta)
 #------------------   17: true positive rate (TPR) for identifying active nodes
-#------------------   18: alse discovery rate (FDR) for identifying active nodes
+#------------------   18: false discovery rate (FDR) for identifying active nodes
 #--------------------------------------------------
 p_min = minimum(colmean(psi_path[3][Int(M*0.6):M, option]));
 p_max = maximum(colmean(psi_path[3][Int(M*0.6):M, setdiff(1:d, option)]));
