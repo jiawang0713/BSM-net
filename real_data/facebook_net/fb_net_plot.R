@@ -4,7 +4,6 @@
 #--------------------------------------------------
 #--------- Real data analysis (Facebook friendship network)
 #--------- plot the results
-#--------- last edited in July 22, 2021
 #--------------------------------------------------
 library(readxl)
 library(GGally)
@@ -13,8 +12,8 @@ library(sna)
 # read the results
 d = 21 
 n = 347
-selected_sp <- read.table("~/Desktop/ACI-ICS/Research_NET/facebook_net/gamma_sp_abs_d=21_n=347_M=5000.csv", quote="\"", comment.char="")
-beta_delta_sp <- read.table("~/Desktop/ACI-ICS/Research_NET/facebook_net/beta_delta_sp_abs_d=21_n=347_M=5000.csv", quote="\"", comment.char="")
+selected_sp <- read.table("~/gamma_sp_abs_d=21_n=347_M=5000.csv", quote="\"", comment.char="")
+beta_delta_sp <- read.table("~/beta_delta_sp_abs_d=21_n=347_M=5000.csv", quote="\"", comment.char="")
 beta_delta_sp = as.matrix(beta_delta_sp)
 rank = which(apply(selected_sp, 2, mean)>0.5)
 selected_sp_vb = rank[which(rank<d+1)] 
@@ -27,7 +26,7 @@ for (i in selected_sp_vb){
 }
 
 # plot Facebook friendship network 
-Y =  read.csv("Documents/Research/BVS_NET/fb_net/Y.csv", row.names=1)
+Y =  read.csv("~/Y.csv", row.names=1)
 net = network(Y, directed = FALSE)
 net %v% "group"  = col
 set.seed(827)
