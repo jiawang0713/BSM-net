@@ -9,13 +9,8 @@
 #--------------------------------------------------
 #----------------- set up functions and parameters
 #--------------------------------------------------
-using Distributions, Roots, StatsBase, CPUTime, Clustering, Random, LinearAlgebra, DelimitedFiles
-M = 1000;
-
-function g(x,y) 
-    return x.*y
-end
-
+using Distributions, Roots, StatsBase, CPUTime, Clustering, Random, LinearAlgebra, DelimitedFiles # call the packages
+M = 1000; # number of iterations in mcmc
 # a function to get column means for a matrix
 function colmean(x)
     y = ones(size(x)[2]);
@@ -52,6 +47,9 @@ l = length(Model);
     return temp
 end
 
+function g(x,y) 
+    return x.*y
+end
 #--------------------------------------------------
 #----------------- read X and Y
 #--------------------------------------------------
