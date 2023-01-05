@@ -104,7 +104,7 @@ end
 #----------------- write simulated X, Y, delta
 #--------------------------------------------------
 data = X;
-file_name = join(["/storage/home/j/jzw88/work/Research_NET_revision/simulation_data/$code","_X_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]);
+file_name = join(["/simulation_data/$code","_X_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]);
 open(file_name,"w") do f
     for i in 1:size(data)[1]
         for j in 1:size(data)[2]
@@ -115,7 +115,7 @@ open(file_name,"w") do f
     end
 end
 data = Y;
-file_name = join(["/storage/home/j/jzw88/work/Research_NET_revision/simulation_data/$code","_Y_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]);
+file_name = join(["/simulation_data/$code","_Y_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]);
 open(file_name,"w") do f
     for i in 1:size(data)[1]
         for j in 1:size(data)[2]
@@ -126,7 +126,7 @@ open(file_name,"w") do f
     end
 end
 data = delta_true;
-file_name = join(["/storage/home/j/jzw88/work/Research_NET_revision/simulation_data/$code","_delta_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]);
+file_name = join(["/simulation_data/$code","_delta_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]);
 open(file_name,"w") do f
     for i in 1:size(data)[1]
         a = data[i];
@@ -405,7 +405,7 @@ count = [p_min, p_max,
 #----------------- write results
 #--------------------------------------------------
 # write result
-open(join(["/storage/home/j/jzw88/work/Research_NET_revision/simulation_result/$code","_sp_K=$K", "_n=$n", "_d=$d", "_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"])
+open(join(["/simulation_result/$code","_sp_K=$K", "_n=$n", "_d=$d", "_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"])
       ,"w") do f
     for i in 1:length(count)
         a=count[i];
