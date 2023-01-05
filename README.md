@@ -46,7 +46,7 @@ Codes for the project: *Variable Selection for High-dimensional Nodal Attributes
 
 * `X.csv`: the node-level features X.
 
-* `21featnames`: anonymous feature names for those 21 survey questions about users profiles.
+* `21featnames`: anonymous feature names for those 21 survey questions about user profiles.
 
 -------------------------------------------------------------------------------------------
  
@@ -68,9 +68,9 @@ Codes for the project: *Variable Selection for High-dimensional Nodal Attributes
 
 * `citation_X_1207_n=476.csv`: the node-level features X (created in `create_X.R`).
 
-* `Terms_1207_n=476.csv`: the 5 most frequent terms for each topics. (created in `create_X.R`)
+* `Terms_1207_n=476.csv`: the 5 most frequent terms for each topic. (created in `create_X.R`)
 
-* `selected_indx_1207_n=476.csv`: indices of selected papers. (created in `create_Y.R`)
+* `selected_indx_1207_n=476.csv`: indices of n=476 papers. (created in `create_Y.R`)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
