@@ -30,8 +30,6 @@ everyloop<- function(iter){
   library(glmnet) # for SCAD and MCP
   p = 1000
   n = 50
-  # May edit it based your directory
-  setwd("/simulation_result")
   option=c(1,2,5,8) # true active set
   signal = c(2.1, -2.4, 2.7, -3.0) # true signal
   beta_true=rep(0, p)
@@ -42,7 +40,7 @@ everyloop<- function(iter){
   count_lasso=rep(0,7)
   count_mcp=rep(0,7)
   #--------------------------------------------------
-  #------------------ read X and Y
+  #------------------ read X and Y generated in net_sp_worker.jl
   #--------------------------------------------------
   file_path = paste('/simulation_data/',code,'_X_K='
                     ,K, '_n=',n,'_d=',p,'_Xtype=',Xtype,'_corr=',corr,'_sp=',sp,'_loop=',iter,'.csv',sep='')
