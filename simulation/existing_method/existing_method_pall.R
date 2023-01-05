@@ -31,7 +31,7 @@ everyloop<- function(iter){
   p = 1000
   n = 50
   # May edit it based your directory
-  setwd("/storage/home/jzw88/work/Research_NET_revision/simulation_result")
+  setwd("/simulation_result")
   option=c(1,2,5,8) # true active set
   signal = c(2.1, -2.4, 2.7, -3.0) # true signal
   beta_true=rep(0, p)
@@ -44,10 +44,10 @@ everyloop<- function(iter){
   #--------------------------------------------------
   #------------------ read X and Y
   #--------------------------------------------------
-  file_path = paste('/storage/home/jzw88/work/Research_NET_revision/simulation_data/',code,'_X_K='
+  file_path = paste('/simulation_data/',code,'_X_K='
                     ,K, '_n=',n,'_d=',p,'_Xtype=',Xtype,'_corr=',corr,'_sp=',sp,'_loop=',iter,'.csv',sep='')
   X_feature = data.matrix(read.table(file_path, quote="\"", comment.char=""))
-  file_path = paste('/storage/home/jzw88/work/Research_NET_revision/simulation_data/',code,'_Y_K='
+  file_path = paste('/simulation_data/',code,'_Y_K='
                     ,K, '_n=',n,'_d=',p,'_Xtype=',Xtype,'_corr=',corr,'_sp=',sp,'_loop=',iter,'.csv',sep='')
   Y_net = data.matrix(read.table(file_path, quote="\"", comment.char=""))
   
@@ -243,9 +243,9 @@ everyloop<- function(iter){
 #------------------ write results 
 #--------------------------------------------------
 findata<-sfClusterApplyLB(1:Iteration, everyloop)
-write.csv(findata,file = paste('/storage/home/jzw88/work/Research_NET_revision/simulation_result_raw/', code, '_LLA_om_raw_Xtype='
+write.csv(findata,file = paste('/simulation_result_raw/', code, '_LLA_om_raw_Xtype='
                                ,Xtype,'_corr=',corr,'_sp=',sp,'.csv',sep=''))
-data=read.csv(paste('/storage/home/jzw88/work/Research_NET_revision/simulation_result_raw/', code, '_LLA_om_raw_Xtype='
+data=read.csv(paste('/simulation_result_raw/', code, '_LLA_om_raw_Xtype='
                     ,Xtype,'_corr=',corr,'_sp=',sp,'.csv',sep=''))
 data=as.matrix(data)
 data=data[,2:(Iteration*7+1)]
@@ -262,5 +262,5 @@ for (i in 1:(Iteration-1)){
 }
 result=data[,1:7]/count
 rownames(result) <-c("LASSO", "SCAD", "MCP")
-# write.csv(K_list,file = paste('/storage/home/jzw88/work/Research_NET_revision/simulation_result/',code,'_lasso_K_Xtype=',Xtype,'_corr=',corr,'_sp=',sp,'.csv',sep=''))
-write.csv(result,file = paste('/storage/home/jzw88/work/Research_NET_revision/simulation_result/',code,'_LLA_om_Xtype=',Xtype,'_corr=',corr,'_sp=',sp,'.csv',sep=''))
+# write.csv(K_list,file = paste('/simulation_result/',code,'_lasso_K_Xtype=',Xtype,'_corr=',corr,'_sp=',sp,'.csv',sep=''))
+write.csv(result,file = paste('/simulation_result/',code,'_LLA_om_Xtype=',Xtype,'_corr=',corr,'_sp=',sp,'.csv',sep=''))
