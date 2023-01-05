@@ -1,5 +1,5 @@
 # BSM-net
-Code for the project: *Variable Selection for High-dimensional Nodal Attributes in Social Networks with Degree Heterogeneity*. Please see the folder structure below. 
+Codes for the project: *Variable Selection for High-dimensional Nodal Attributes in Social Networks with Degree Heterogeneity*. Please see the folder structure below. 
 
 ---------------------------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 ### facebook_net
 
-**Data source**: The dataset is publicly accessible downloaded from <https://snap.stanford.edu/data/ego-Facebook.html> network 0.
+**Data source**: The dataset is publicly accessible and downloaded from <https://snap.stanford.edu/data/ego-Facebook.html> network 0.
 
 #### ----- codes
 
@@ -52,7 +52,7 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
  
 ### citation_net
 
-**Data source**: The dataset is publicly accessible downloaded from <https://www.aminer.cn/citation> ACM-Citation-network V9.
+**Data source**: The dataset is publicly accessible and downloaded from <https://www.aminer.cn/citation> ACM-Citation-network V9.
 
 #### ----- codes
 
@@ -76,7 +76,7 @@ Code for the project: *Variable Selection for High-dimensional Nodal Attributes 
 
 ### trade_net
 
-**Data source**: The datasets are publicly accessible downloaded from <http://www.cepii.fr/CEPII/en/bdd_modele/presentation.asp?id=37> for the trade data set, and <https://datacatalog.worldbank.org/dataset/world-development-indicators> for the WDI data set.
+**Data source**: The datasets are publicly accessible and downloaded from <http://www.cepii.fr/CEPII/en/bdd_modele/presentation.asp?id=37> for the trade data set, and <https://datacatalog.worldbank.org/dataset/world-development-indicators> for the WDI data set.
 
 #### ----- codes
 
