@@ -99,5 +99,4 @@ for (i in 2:n){
     }
   }
 }
-sum(Y)
 write.csv(Y,file = '~/trade_data/trade_Y_n=142.csv')
