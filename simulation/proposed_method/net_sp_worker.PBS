@@ -1,6 +1,5 @@
 #!/bin/bash
 #PBS -A open
-## #PBS -A drh20_a_g_sc_default
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=12:00:00
 #PBS -l pmem=128gb
@@ -10,5 +9,5 @@
 module load gcc
 module load julia/1.3.1
 
-cd work/Research_NET_revision/code
+cd work/code
 julia net_sp_worker.jl $loop
