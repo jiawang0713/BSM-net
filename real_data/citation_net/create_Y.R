@@ -7,7 +7,7 @@
 #--------------------------------------------------
 
 #--------------------------------------------------
-#--------- Step 1: convert raw text data 'acm.txt' into 'citation_full.RData' (file contained in the folder)
+#--------- Step 1: convert raw text data 'acm.txt' into 'citation_full.RData'
 #--------------------------------------------------
 setwd("~/citation_network_V9/")
 con = file("~/acm.txt", "r") # 'acm.txt' could be downloaded from https://www.aminer.cn/citation ACM-Citation-network V9
@@ -52,9 +52,8 @@ close(con)
 save(title, author, year, publication, citation, index, abstract,file = "~/citation_full.RData")
 
 #--------------------------------------------------
-#--------- Step 2: Get node degree for each paper and save it in a vector named 'count' (file contained in the folder)
+#--------- Step 2: Get node degree for each paper and save it in a vector named 'count'
 #--------------------------------------------------
-
 indx_sub = which(abstract!="")
 temp = which(citation!="")
 indx_sub = intersect(indx_sub,temp)
@@ -76,7 +75,6 @@ write.csv(count,file = '~/count.csv')
 #--------------------------------------------------
 #--------- Step 3: Get a dense sub-network with samller size 
 #--------------------------------------------------
-
 count = read.csv("~/count.csv")
 count = count$x
 ind = which(count >200)
