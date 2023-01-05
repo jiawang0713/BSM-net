@@ -9,15 +9,15 @@ Codes for the project: *Variable Selection for High-dimensional Nodal Attributes
 
 * `net_nonsp_worker.jl`: the proposed method (BSM-net) written in Julia 1.3.1.
 
-* `net_nonsp_worker.PBS`: A PBS script used to submit jobs to the scheduler
+* `net_nonsp_worker.PBS`: a PBS script used to submit jobs to the scheduler
 
-* `net_nonsp_mgr.bashrc`: A bash shell script file used to submit jobs to the scheduler
+* `net_nonsp_mgr.bashrc`: a bash shell script file used to submit jobs to the scheduler
 
 * `net_sp_worker.jl`: the proposed method (BSM-net.sp) written in Julia 1.3.1.
 
-* `net_sp_worker.PBS`: A PBS script used to submit jobs to the scheduler
+* `net_sp_worker.PBS`: a PBS script used to submit jobs to the scheduler
 
-* `net_sp_mgr.bashrc`: A bash shell script file used to submit jobs to the scheduler
+* `net_sp_mgr.bashrc`: a bash shell script file used to submit jobs to the scheduler
 
 ### existing_method
 
@@ -40,7 +40,7 @@ Codes for the project: *Variable Selection for High-dimensional Nodal Attributes
 
 * `fb_net_plot.R`: R codes for rendering results and plots.
 
-#### ----- data and results
+#### ----- data / results
 
 * `Y.csv`: the adjacency matrix Y.
 
@@ -62,7 +62,7 @@ Codes for the project: *Variable Selection for High-dimensional Nodal Attributes
 
 * `create_Y.R`: R codes to construct the adjacency matrix Y based on the citation data set.
 
-#### ----- data and results
+#### ----- data / results
 
 * `citation_Y_1207_n=476.csv`: the adjacency matrix Y (created in `create_Y.R`).
 
@@ -84,13 +84,13 @@ Codes for the project: *Variable Selection for High-dimensional Nodal Attributes
 
 **NOTE**: `.jl` file is skipped here as it is almost the same as `rd_sp_citation.jl`
 
-#### ----- data and results
+#### ----- data / results
 
 * `trade_Y_n=142.csv`: the adjacency matrix Y (constructed based on the trade data set).
 
 * `trade_X_n=142.csv`: the node-level features X (constructed based on the WDI data set).
 
-* `final_country_codes_n=142.csv`: the collection of n = 142 selected countries. (created in `preprocessing.R`)
+* `final_country_codes_n=142.csv`: country code for n = 142 countries. (created in `preprocessing.R`)
 
 * `Y_2017.csv`: aggregated total value of trade in cash for edge i->j in the year 2017. (created in `preprocessing.R`)
 
