@@ -66,9 +66,9 @@ end
 #--------------------------------------------------
 #----------------- read X, Y, delta
 #--------------------------------------------------
-X = readdlm(join(["/storage/home/j/jzw88/work/Research_NET_revision/simulation_data/$code","_X_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]));
-Y = readdlm(join(["/storage/home/j/jzw88/work/Research_NET_revision/simulation_data/$code","_Y_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]));
-delta_true = readdlm(join(["/storage/home/j/jzw88/work/Research_NET_revision/simulation_data/$code","_delta_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]));
+X = readdlm(join(["/simulation_data/$code","_X_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]));
+Y = readdlm(join(["/simulation_data/$code","_Y_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]));
+delta_true = readdlm(join(["/simulation_data/$code","_delta_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"]));
 delta_true = convert(Array{Float64,1},  delta_true[1:(size(delta_true)[2]-1)]);
 
 ## get the design matrix T from X
@@ -257,7 +257,7 @@ count = [p_max, p_min,
 #--------------------------------------------------
 #----------------- write results
 #--------------------------------------------------
-open(join(["/storage/home/j/jzw88/work/Research_NET_revision/simulation_result/$code","_nonsp_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"])
+open(join(["/simulation_result/$code","_nonsp_K=$K", "_n=$n", "_d=$d","_Xtype=$Xtype","_corr=$corr","_sp=$sp","_loop=$iter",".csv"])
       ,"w") do f
     for i in 1:length(count)
         a=count[i];
